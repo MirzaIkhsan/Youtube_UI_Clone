@@ -15,7 +15,6 @@ class HorizontalMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return InkWell(
         onTap: this.onTap,
         onHover: (isHover) {

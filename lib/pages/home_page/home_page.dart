@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_ui_clone/constants/controller.dart';
-import 'package:youtube_ui_clone/widgets/side_menu.dart';
 
+import '../../pages/layout/large_screen_layout.dart';
+import '../../pages/layout/small_screen_layout.dart';
+import '../../widgets/grid_view_videos.dart';
 import '../../helpers/responsiveness.dart';
-import '../../widgets/top_navbar.dart';
-import './small_screen.dart';
-import './large_screen.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -14,28 +12,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    return Scaffold(
-      key: scaffoldKey,
-      appBar: TopNavBar(
-        scaffoldKey,
-        onPressed: () => ResponsiveWidget.isLargeScreenSize(context)
-            ? homeController.openDrawer = !homeController.isDrawerOpen
-            : scaffoldKey.currentState!.openDrawer(),
-      ),
-      drawer: Container(
-        width: ResponsiveWidget.isSmallScreenSize(context)
-            ? size.width / 2
-            : size.width / 4,
-        child: Drawer(child: SideMenu()),
-      ),
-      body: ResponsiveWidget(
-        largeScreen: LargeScreen(),
-        smallScreen: SmallScreen(),
-      ),
-      drawerEnableOpenDragGesture: false,
-      endDrawerEnableOpenDragGesture: false,
+    return ResponsiveWidget(
+      largeScreen: LargeScreenLayout(child: GridViewVideo(crossAxisCount: 4)),
+      mediumScreen: LargeScreenLayout(
+          drawerFlex: 2, child: GridViewVideo(crossAxisCount: 2)),
+      smallScreen: SmallScreenLayout(child: GridViewVideo(crossAxisCount: 2)),
     );
   }
 }

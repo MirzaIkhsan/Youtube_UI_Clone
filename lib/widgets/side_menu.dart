@@ -15,7 +15,6 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Container(
       color: Colors.black,
       child: ListView(
@@ -62,6 +61,7 @@ class SideMenu extends StatelessWidget {
                         .map((itemName) => HorizontalMenuItem(
                               itemName: itemName,
                               onTap: () {
+                                print(itemName);
                                 if (!menuController.isActive(itemName)) {
                                   menuController.changeActiveItemTo = itemName;
                                   navigationController.navigateTo(itemName);

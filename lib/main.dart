@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:youtube_ui_clone/controllers/home_page_controller.dart';
 import 'package:youtube_ui_clone/controllers/navigation_controller.dart';
+import 'package:youtube_ui_clone/pages/layout/home_layout.dart';
 
 import './constants/pallete.dart';
 import './controllers/menu_controller.dart';
-import './pages/home_page/home_page.dart';
 
 void main() {
   Get.put(MenuController());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ).apply(bodyColor: Colors.white),
       ),
-      home: HomePage(),
+      home: HomeLayout(),
     );
   }
 }

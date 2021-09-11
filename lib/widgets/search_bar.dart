@@ -18,7 +18,7 @@ class SearchBar extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: ResponsiveWidget.isLargeScreenSize(context) ? 573 : 300,
+          width: ResponsiveWidget.isLargeScreenSize(context) ? 500 : 300,
           height: 32,
           color: Color(0xFF121212),
           child: Align(

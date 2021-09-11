@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:youtube_ui_clone/constants/pallete.dart';
-import 'package:youtube_ui_clone/pages/home_page/home_page.dart';
+
+import './constants/pallete.dart';
+import './controllers/menu_controller.dart';
+import './pages/home_page/home_page.dart';
 
 void main() {
+  Get.put(MenuController());
   runApp(MyApp());
 }
 

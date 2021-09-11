@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:youtube_ui_clone/constants/controller.dart';
 
 class VideoCardItem extends StatelessWidget {
   // final String imageUrl;

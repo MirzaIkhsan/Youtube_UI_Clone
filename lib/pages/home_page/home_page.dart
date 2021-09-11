@@ -14,15 +14,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       key: scaffoldKey,
-      appBar: TopNavBar(scaffoldKey,
-          onPressed: () =>
-              homeController.openDrawer = !homeController.isDrawerOpen),
-      // drawer: Container(
-      //   width: size.width / 6,
-      //   child: Drawer(child: SideMenu()),
-      // ),
+      appBar: TopNavBar(
+        scaffoldKey,
+        onPressed: () => ResponsiveWidget.isLargeScreenSize(context)
+            ? homeController.openDrawer = !homeController.isDrawerOpen
+            : scaffoldKey.currentState!.openDrawer(),
+      ),
+      drawer: Container(
+        width: ResponsiveWidget.isSmallScreenSize(context)
+            ? size.width / 2
+            : size.width / 4,
+        child: Drawer(child: SideMenu()),
+      ),
       body: ResponsiveWidget(
         largeScreen: LargeScreen(),
         smallScreen: SmallScreen(),

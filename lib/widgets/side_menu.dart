@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:youtube_ui_clone/helpers/responsiveness.dart';
-import 'package:youtube_ui_clone/routers/routes.dart';
-import 'package:youtube_ui_clone/widgets/horizontal_menu_item.dart';
+import 'package:youtube_ui_clone/constants/controller.dart';
+
+import '../helpers/responsiveness.dart';
+import '../routers/routes.dart';
+import '../widgets/horizontal_menu_item.dart';
 
 class SideMenu extends StatelessWidget {
   final bool showIconLogo;
@@ -13,6 +15,7 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Container(
       color: Colors.black,
       child: ListView(
@@ -47,7 +50,9 @@ class SideMenu extends StatelessWidget {
                   ],
                 )
               : SizedBox(),
-          ResponsiveWidget.isLargeScreenSize(context)
+          ResponsiveWidget.isLargeScreenSize(context) ||
+                  ResponsiveWidget.isMediumScreenSize(context) ||
+                  ResponsiveWidget.isCustomScreenSize(context)
               ? Container(
                   margin: showIconLogo
                       ? EdgeInsets.only(top: 14)
@@ -56,7 +61,12 @@ class SideMenu extends StatelessWidget {
                     children: sideMenuItem
                         .map((itemName) => HorizontalMenuItem(
                               itemName: itemName,
-                              onTap: () => print(itemName),
+                              onTap: () {
+                                if (!menuController.isActive(itemName)) {
+                                  menuController.changeActiveItemTo = itemName;
+                                  navigationController.navigateTo(itemName);
+                                }
+                              },
                             ))
                         .toList(),
                   ),

@@ -75,6 +75,7 @@ class _TopNavBarState extends State<TopNavBar> {
           Icon(Icons.notifications_outlined, color: Colors.white),
           SizedBox(width: 24),
           Container(
+            margin: EdgeInsets.only(right: 24),
             padding: EdgeInsets.all(4),
             width: 32,
             height: 32,

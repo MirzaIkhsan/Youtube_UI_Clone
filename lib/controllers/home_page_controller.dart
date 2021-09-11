@@ -2,7 +2,9 @@ import 'package:get/get.dart';
 
 class HomePageController extends GetxController {
   static HomePageController instance = Get.find();
-  var isDrawerOpen = false.obs;
+  var _isDrawerOpen = true.obs;
 
-  set openDrawer(bool isOpen) => this.isDrawerOpen.value = isOpen;
+  bool get isDrawerOpen => this._isDrawerOpen.value;
+
+  set openDrawer(bool isOpen) => this._isDrawerOpen.value = isOpen;
 }

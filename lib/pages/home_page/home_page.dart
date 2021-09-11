@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
       key: scaffoldKey,
       appBar: TopNavBar(scaffoldKey,
           onPressed: () =>
-              homeController.openDrawer = !homeController.isDrawerOpen.value),
+              homeController.openDrawer = !homeController.isDrawerOpen),
       // drawer: Container(
       //   width: size.width / 6,
       //   child: Drawer(child: SideMenu()),

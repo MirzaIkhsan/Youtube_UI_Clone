@@ -31,15 +31,14 @@ class HorizontalMenuItem extends StatelessWidget {
             child: Row(
               children: [
                 Visibility(
-                  visible: menuController.isHovering(this.itemName) ||
-                      menuController.isActive(this.itemName),
+                  visible: menuController.isActive(this.itemName),
                   maintainSize: true,
                   maintainState: true,
                   maintainAnimation: true,
                   child: Container(
                     width: 6,
                     height: 40,
-                    color: Colors.greenAccent,
+                    color: Colors.white60,
                   ),
                 ),
                 SizedBox(width: size.width / 80),

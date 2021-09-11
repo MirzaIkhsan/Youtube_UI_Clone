@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:youtube_ui_clone/constants/controller.dart';
+import 'package:youtube_ui_clone/widgets/side_menu.dart';
 
 class LargeScreen extends StatelessWidget {
   const LargeScreen({Key? key}) : super(key: key);
@@ -7,11 +10,9 @@ class LargeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: Container(
-            color: Colors.redAccent,
-          ),
-        ),
+        Obx(() => homeController.isDrawerOpen.value
+            ? Expanded(child: SideMenu(showIconLogo: false))
+            : SizedBox()),
         Expanded(
           flex: 5,
           child: Container(

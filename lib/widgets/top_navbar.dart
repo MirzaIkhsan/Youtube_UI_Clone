@@ -6,9 +6,11 @@ import './search_bar.dart';
 
 class TopNavBar extends StatefulWidget implements PreferredSizeWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
+  final void Function()? onPressed;
   const TopNavBar(
     this.scaffoldKey, {
     Key? key,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -31,7 +33,8 @@ class _TopNavBarState extends State<TopNavBar> {
             margin: const EdgeInsets.only(left: 24),
             child: IconButton(
               icon: Icon(Icons.format_list_bulleted_outlined),
-              onPressed: () => widget.scaffoldKey.currentState!.openDrawer(),
+              // onPressed: () => widget.scaffoldKey.currentState!.openDrawer(),
+              onPressed: widget.onPressed,
               splashRadius: 20,
               splashColor: Colors.white12,
             ),

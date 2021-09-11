@@ -1,7 +1,7 @@
-const HomePageRoute = 'HomePage';
-const CollectionPageRoute = 'CollectionPage';
-const HistoryPageRoute = 'HistoryPage';
-const FavoritePageRoute = 'FavoritePage';
+const HomePageRoute = 'Home';
+const CollectionPageRoute = 'Collection';
+const HistoryPageRoute = 'History';
+const FavoritePageRoute = 'Favorite';
 
 List sideMenuItem = [
   HomePageRoute,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:youtube_ui_clone/controllers/home_page_controller.dart';
 
 import './constants/pallete.dart';
 import './controllers/menu_controller.dart';
@@ -8,6 +9,7 @@ import './pages/home_page/home_page.dart';
 
 void main() {
   Get.put(MenuController());
+  Get.put(HomePageController());
   runApp(MyApp());
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_ui_clone/constants/controller.dart';
 import 'package:youtube_ui_clone/widgets/side_menu.dart';
 
 import '../../helpers/responsiveness.dart';
@@ -13,18 +14,21 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      appBar: TopNavBar(scaffoldKey),
-      drawer: Container(
-        width: size.width / 6,
-        child: Drawer(child: SideMenu()),
-      ),
+      appBar: TopNavBar(scaffoldKey,
+          onPressed: () =>
+              homeController.openDrawer = !homeController.isDrawerOpen.value),
+      // drawer: Container(
+      //   width: size.width / 6,
+      //   child: Drawer(child: SideMenu()),
+      // ),
       body: ResponsiveWidget(
         largeScreen: LargeScreen(),
         smallScreen: SmallScreen(),
       ),
+      drawerEnableOpenDragGesture: false,
+      endDrawerEnableOpenDragGesture: false,
     );
   }
 }

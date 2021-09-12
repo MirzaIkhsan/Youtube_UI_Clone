@@ -61,7 +61,6 @@ class SideMenu extends StatelessWidget {
                         .map((itemName) => HorizontalMenuItem(
                               itemName: itemName,
                               onTap: () {
-                                print(itemName);
                                 if (!menuController.isActive(itemName)) {
                                   menuController.changeActiveItemTo = itemName;
                                   navigationController.navigateTo(itemName);

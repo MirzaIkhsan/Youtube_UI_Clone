@@ -74,18 +74,21 @@ class _TopNavBarState extends State<TopNavBar> {
           SizedBox(width: 24),
           Icon(Icons.notifications_outlined, color: Colors.white),
           SizedBox(width: 24),
-          Container(
-            margin: EdgeInsets.only(right: 24),
-            padding: EdgeInsets.all(4),
-            width: 32,
-            height: 32,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.redAccent,
-            ),
-            child: Icon(
-              Icons.person_outline,
-              color: Colors.white,
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.only(right: 24),
+              padding: EdgeInsets.all(4),
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.redAccent,
+              ),
+              child: Icon(
+                Icons.person_outline,
+                color: Colors.white,
+              ),
             ),
           ),
         ],

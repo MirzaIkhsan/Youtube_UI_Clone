@@ -12,11 +12,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: LargeScreenLayout(child: GridViewVideo(crossAxisCount: 4)),
-      mediumScreen: LargeScreenLayout(
-          drawerFlex: 2, child: GridViewVideo(crossAxisCount: 2)),
-      smallScreen: SmallScreenLayout(child: GridViewVideo(crossAxisCount: 2)),
-    );
+    if (ResponsiveWidget.isLargeScreenSize(context)) {
+      return GridViewVideo(crossAxisCount: 4);
+    } else if (ResponsiveWidget.isMediumScreenSize(context)) {
+      return GridViewVideo(crossAxisCount: 2);
+    }
+    return GridViewVideo(crossAxisCount: 2);
   }
 }

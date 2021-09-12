@@ -1,6 +1,5 @@
-import 'package:youtube_ui_clone/controllers/home_page_controller.dart';
-import 'package:youtube_ui_clone/controllers/navigation_controller.dart';
-
+import '../controllers/home_page_controller.dart';
+import '../controllers/navigation_controller.dart';
 import '../controllers/menu_controller.dart';
 
 MenuController menuController = MenuController.instance;

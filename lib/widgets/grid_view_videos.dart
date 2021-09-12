@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:youtube_ui_clone/models/video.dart';
+import 'package:youtube_ui_clone/pages/video_player_page/video_player_page.dart';
 
 import './video_card_item.dart';
 
@@ -12,14 +15,21 @@ class GridViewVideo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        itemCount: 5,
+        itemCount: videos.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: this.crossAxisCount,
           crossAxisSpacing: 16,
           mainAxisSpacing: 25,
         ),
         itemBuilder: (context, idx) {
-          return VideoCardItem();
+          return InkWell(
+            onTap: () => Get.to(VideoPlayerPage()),
+            splashColor: Colors.transparent,
+            child: VideoCardItem(
+              title: videos[idx].title,
+              thumbnail: videos[idx].thumbnail,
+            ),
+          );
         });
   }
 }

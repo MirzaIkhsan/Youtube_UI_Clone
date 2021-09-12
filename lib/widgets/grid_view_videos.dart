@@ -23,7 +23,9 @@ class GridViewVideo extends StatelessWidget {
         ),
         itemBuilder: (context, idx) {
           return InkWell(
-            onTap: () => Get.to(VideoPlayerPage()),
+            onTap: () => Get.to(
+              VideoPlayerPage(videoUrl: videos[idx].videoUrl),
+            ),
             splashColor: Colors.transparent,
             child: VideoCardItem(
               title: videos[idx].title,
